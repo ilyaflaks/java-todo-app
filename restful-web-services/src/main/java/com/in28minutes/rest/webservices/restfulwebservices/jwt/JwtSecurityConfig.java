@@ -51,6 +51,7 @@ public class JwtSecurityConfig {
 		return httpSecurity
                 .authorizeHttpRequests(auth -> auth
 						// .requestMatchers("/authenticate").permitAll()
+						.mvcMatchers("/").permitAll() // #CHANGE
 						.mvcMatchers("/authenticate").permitAll()
 						// .requestMatchers(PathRequest.toH2Console()).permitAll() // h2-console
 																															// is

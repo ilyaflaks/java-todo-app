@@ -11,7 +11,7 @@ public class RestfulWebServicesApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RestfulWebServicesApplication.class, args);
-		System.out.println("Application runing on port 8080");
+		System.out.println("Application runing on port 5000");
 	}
 
 	@Bean
@@ -22,9 +22,12 @@ public class RestfulWebServicesApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**") // enable for everything
 						.allowedMethods("*") // GET, POST, PATCH, UPDATE, DELETE, etc
-						.allowedOrigins("http://localhost:3000");
+						// .allowedOrigins("http://localhost:3000/");
+						// .allowedOrigins("*");// Not recommended for production
+						.allowedOrigins("http://todoapp-ilyaflaks.s3-website-us-west-1.amazonaws.com/");
 			}
 
 		};
 	}
 }
+//http://todoapp-ilyaflaks.s3-website-us-west-1.amazonaws.com/
